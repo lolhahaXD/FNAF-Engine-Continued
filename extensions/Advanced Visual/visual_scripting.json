@@ -1,0 +1,244 @@
+{
+	"categories": {
+		"Animations (Advanced)": {
+			"actions": [ "Load office animation", "Load camera animation", "Play office animation", "Play camera animation", "Pause office animation", "Resume office animation", "Resume camera animation", "Pause camera animation", "Is camera animation paused", "Is office animation paused" ],
+			"events": [ "When office animation finished", "When camera animation finished" ]
+		},
+		"Animatronics (Advanced)": {
+			"actions": [ "Loop over animatronics" ],
+			"events": []
+		},
+		"Game Control": {
+			"actions": [],
+			"events": [ "On Engine Start" ]
+		},
+		"Lists (Advanced)": {
+			"actions": [ "Create list", "Delete list", "Append to list", "Remove from list", "Set item at index", "Loop over list items" ],
+			"events": []
+		}
+	},
+	"code_blocks": {
+		"append_list": {
+			"args": [ {
+				"size": 100,
+				"type": "input",
+				"x": 68
+			}, {
+				"size": 100,
+				"type": "input",
+				"x": 205
+			} ],
+			"name": "Append to list",
+			"text": "Append                           to list",
+			"type": "action"
+		},
+		"camera_animation_finished": {
+			"args": [ {
+				"size": 100,
+				"type": "input",
+				"x": 121
+			} ],
+			"name": "When camera animation finished",
+			"text": "Camera animation                           finished",
+			"type": "event"
+		},
+		"create_list": {
+			"args": [ {
+				"size": 100,
+				"type": "input",
+				"x": 78
+			}, {
+				"size": 150,
+				"type": "input",
+				"x": 248
+			} ],
+			"name": "Create list",
+			"text": "Create list                           with values",
+			"type": "action"
+		},
+		"delete_list": {
+			"args": [ {
+				"size": 100,
+				"type": "input",
+				"x": 78
+			} ],
+			"name": "Delete list",
+			"text": "Delete list",
+			"type": "action"
+		},
+		"is_cam_paused": {
+			"args": [ {
+				"size": 100,
+				"type": "input",
+				"x": 119
+			} ],
+			"name": "Is camera animation paused",
+			"negate": true,
+			"text": "Camera animation                           is paused",
+			"type": "sub"
+		},
+		"is_office_paused": {
+			"args": [ {
+				"size": 100,
+				"type": "input",
+				"x": 112
+			} ],
+			"name": "Is office animation paused",
+			"negate": true,
+			"text": "Office animation                           is paused",
+			"type": "sub"
+		},
+		"load_camera_animation": {
+			"args": [ {
+				"size": 100,
+				"type": "input",
+				"x": 148
+			} ],
+			"name": "Load camera animation",
+			"text": "Load camera animation                           ",
+			"type": "action"
+		},
+		"load_office_animation": {
+			"args": [ {
+				"size": 100,
+				"type": "input",
+				"x": 140
+			} ],
+			"name": "Load office animation",
+			"text": "Load office animation                           ",
+			"type": "action"
+		},
+		"loop_animatronics": {
+			"args": [ {
+				"size": 100,
+				"type": "input",
+				"x": 205
+			} ],
+			"name": "Loop over animatronics",
+			"text": "Loop over animatronics (Variable:                           )",
+			"type": "sub"
+		},
+		"loop_over_list": {
+			"args": [ {
+				"size": 100,
+				"type": "input",
+				"x": 97
+			}, {
+				"size": 100,
+				"type": "input",
+				"x": 255
+			} ],
+			"name": "Loop over list items",
+			"text": "Loop over list                           (Variable:                          )",
+			"type": "sub"
+		},
+		"office_animation_finished": {
+			"args": [ {
+				"size": 100,
+				"type": "input",
+				"x": 112
+			} ],
+			"name": "When office animation finished",
+			"text": "Office animation                           finished",
+			"type": "event"
+		},
+		"on_engine_start": {
+			"args": [],
+			"name": "On Engine Start",
+			"text": "On Engine Start",
+			"type": "event"
+		},
+		"pause_camera_animation": {
+			"args": [ {
+				"size": 120,
+				"type": "input",
+				"x": 154
+			} ],
+			"name": "Pause camera animation",
+			"text": "Pause camera animation ",
+			"type": "action"
+		},
+		"pause_office_animation": {
+			"args": [ {
+				"size": 120,
+				"type": "input",
+				"x": 147
+			} ],
+			"name": "Pause office animation",
+			"text": "Pause office animation ",
+			"type": "action"
+		},
+		"play_camera_animation": {
+			"args": [ {
+				"size": 100,
+				"type": "input",
+				"x": 143
+			} ],
+			"name": "Play camera animation",
+			"text": "Play camera animation",
+			"type": "action"
+		},
+		"play_office_animation": {
+			"args": [ {
+				"size": 100,
+				"type": "input",
+				"x": 134
+			} ],
+			"name": "Play office animation",
+			"text": "Play office animation",
+			"type": "action"
+		},
+		"remove_list": {
+			"args": [ {
+				"size": 100,
+				"type": "input",
+				"x": 145
+			}, {
+				"size": 100,
+				"type": "input",
+				"x": 297
+			} ],
+			"name": "Remove from list",
+			"text": "Remove item at index                           from list",
+			"type": "action"
+		},
+		"resume_camera_animation": {
+			"args": [ {
+				"size": 120,
+				"type": "input",
+				"x": 166
+			} ],
+			"name": "Resume camera animation",
+			"text": "Resume camera animation ",
+			"type": "action"
+		},
+		"resume_office_animation": {
+			"args": [ {
+				"size": 120,
+				"type": "input",
+				"x": 157
+			} ],
+			"name": "Resume office animation",
+			"text": "Resume office animation ",
+			"type": "action"
+		},
+		"set_item_at_index": {
+			"args": [ {
+				"size": 50,
+				"type": "input",
+				"x": 119
+			}, {
+				"size": 100,
+				"type": "input",
+				"x": 201
+			}, {
+				"size": 100,
+				"type": "input",
+				"x": 322
+			} ],
+			"name": "Set item at index",
+			"text": "Set item at index              in list                           to",
+			"type": "action"
+		}
+	}
+}
