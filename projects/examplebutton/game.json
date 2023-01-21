@@ -1,0 +1,1009 @@
+{
+	"animatronics": [],
+	"cameras": {
+		"CamUI": {
+			"buttons": [],
+			"music_box": [ 550, 60 ],
+			"sprites": []
+		}
+	},
+	"game_info": {
+		"id": "DPTB",
+		"title": "Don't Press The Button"
+	},
+	"menus": {
+		"CustomNight": {
+			"code": [],
+			"elements": [],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"GameOver": {
+			"code": [ {
+				"args": [ "80" ],
+				"block": "current_tick_equals",
+				"subcode": [ {
+					"args": [ "Main" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [],
+				"block": "user_left_clicked",
+				"subcode": [ {
+					"args": [ "Main" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "Consolas",
+				"fontsize": 160,
+				"hidden": false,
+				"id": "",
+				"text": "Dead.",
+				"type": "StaticText",
+				"x": 146,
+				"y": 78
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Better luck next time, Subject 847",
+				"type": "StaticText",
+				"x": 67,
+				"y": 172
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": true
+			}
+		},
+		"Main": {
+			"code": [ {
+				"args": [ "newgame" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "News" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [ "continue" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [],
+					"block": "continue_game"
+				} ]
+			}, {
+				"args": [],
+				"block": "on_game_loop",
+				"subcode": [ {
+					"args": [ "continue" ],
+					"block": "is_button_selected",
+					"subcode": [ {
+						"args": [ "night_txt" ],
+						"block": "show_element"
+					}, {
+						"args": [ "night_txt", "Night %data(Night)" ],
+						"block": "set_text"
+					} ]
+				}, {
+					"args": [ "continue" ],
+					"block": "is_button_selected",
+					"negated": true,
+					"subcode": [ {
+						"args": [ "night_txt" ],
+						"block": "hide_element"
+					} ]
+				} ]
+			}, {
+				"args": [],
+				"block": "on_menu_start",
+				"subcode": [ {
+					"args": [ "%data(beat5)", "==", "1" ],
+					"block": "compare_values",
+					"subcode": [ {
+						"args": [ "6thnight" ],
+						"block": "show_element"
+					} ]
+				}, {
+					"args": [ "%data(beat6)", "==", "1" ],
+					"block": "compare_values",
+					"subcode": [ {
+						"args": [ "cn" ],
+						"block": "show_element"
+					} ]
+				} ]
+			}, {
+				"args": [ "6thnight" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "6" ],
+					"block": "start_night"
+				} ]
+			}, {
+				"args": [ "cn" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "CustomNight" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [ "p" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "d1" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [ "q" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [],
+					"block": "quit"
+				} ]
+			}, {
+				"args": [ "console" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "developerconsole" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "a",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "p",
+				"text": "Play  ",
+				"type": "Button",
+				"x": 9,
+				"y": 281
+			}, {
+				"fontname": "Consola",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "q",
+				"text": "Quit    ",
+				"type": "Button",
+				"x": 9,
+				"y": 303
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "1.0.1",
+				"type": "StaticText",
+				"x": 533,
+				"y": 313
+			}, {
+				"fontname": "dConsolas",
+				"fontsize": 16,
+				"hidden": false,
+				"id": "console",
+				"text": "Developer Console           ",
+				"type": "Button",
+				"x": 0,
+				"y": 0
+			} ],
+			"properties": {
+				"BackgroundImage": "logo.png",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"News": {
+			"code": [ {
+				"args": [ "80" ],
+				"block": "current_tick_equals",
+				"subcode": [ {
+					"args": [],
+					"block": "start_new_game"
+				} ]
+			}, {
+				"args": [],
+				"block": "user_left_clicked",
+				"subcode": [ {
+					"args": [],
+					"block": "start_new_game"
+				} ]
+			} ],
+			"elements": [],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"Warning": {
+			"code": [ {
+				"args": [ "80" ],
+				"block": "current_tick_equals",
+				"subcode": [ {
+					"args": [ "Main" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [],
+				"block": "user_left_clicked",
+				"subcode": [ {
+					"args": [ "Main" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "d",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Warning!               ",
+				"type": "StaticText",
+				"x": 214,
+				"y": 162
+			}, {
+				"fontname": "dConsolas",
+				"fontsize": 26,
+				"hidden": false,
+				"id": "",
+				"text": "This game contains comical shenanigans.                                    ",
+				"type": "StaticText",
+				"x": 81,
+				"y": 186
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"buttongame1": {
+			"code": [ {
+				"args": [],
+				"block": "user_left_clicked",
+				"subcode": [ {
+					"args": [ "chap1p2" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [],
+			"properties": {
+				"BackgroundImage": "chap1p1.png",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"chap1d1": {
+			"code": [ {
+				"args": [],
+				"block": "user_left_clicked",
+				"subcode": [ {
+					"args": [ "chap2p1" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "dConsolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "YOU DOOMED US ALL-                        ",
+				"type": "StaticText",
+				"x": 153,
+				"y": 156
+			}, {
+				"hidden": false,
+				"id": "",
+				"sprite": "enter.png",
+				"type": "Image",
+				"x": 171,
+				"y": 238
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"chap1p2": {
+			"code": [ {
+				"args": [],
+				"block": "user_right_clicked",
+				"subcode": [ {
+					"args": [ "chap1d1" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [],
+			"properties": {
+				"BackgroundImage": "chap1p2.png",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"chap2d1": {
+			"code": [ {
+				"args": [],
+				"block": "user_left_clicked",
+				"subcode": [ {
+					"args": [ "chap2p3" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "dConsolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "What does the button even do?              ",
+				"type": "StaticText",
+				"x": 82,
+				"y": 199
+			}, {
+				"hidden": false,
+				"id": "",
+				"sprite": "enter.png",
+				"type": "Image",
+				"x": 160,
+				"y": 237
+			}, {
+				"fontname": "dConsolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "You                   ",
+				"type": "StaticText",
+				"x": 81,
+				"y": 177
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"chap2d2": {
+			"code": [ {
+				"args": [],
+				"block": "user_left_clicked",
+				"subcode": [ {
+					"args": [ "chap2p4" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"hidden": false,
+				"id": "",
+				"sprite": "enter.png",
+				"type": "Image",
+				"x": 183,
+				"y": 237
+			}, {
+				"fontname": "dConsolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Oh? WAH! He's gonna eat me!!!!                  ",
+				"type": "StaticText",
+				"x": 93,
+				"y": 212
+			}, {
+				"fontname": "dConsolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "???      ",
+				"type": "StaticText",
+				"x": 92,
+				"y": 191
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"chap2p1": {
+			"code": [ {
+				"args": [],
+				"block": "user_left_clicked",
+				"subcode": [ {
+					"args": [ "chap2p2" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [],
+			"properties": {
+				"BackgroundImage": "chap2wakeup.png",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"chap2p2": {
+			"code": [ {
+				"args": [],
+				"block": "user_right_clicked",
+				"subcode": [ {
+					"args": [ "chap2d1" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [],
+			"properties": {
+				"BackgroundImage": "ch2p2.png",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"chap2p3": {
+			"code": [ {
+				"args": [],
+				"block": "user_right_clicked",
+				"subcode": [ {
+					"args": [ "chap2d2" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [],
+			"properties": {
+				"BackgroundImage": "roebot.png",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"chap2p4": {
+			"code": [ {
+				"args": [],
+				"block": "user_right_clicked",
+				"subcode": [ {
+					"args": [ "endgame1" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [],
+			"properties": {
+				"BackgroundImage": "chap2finale.png",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"d1": {
+			"code": [ {
+				"args": [],
+				"block": "user_left_clicked",
+				"subcode": [ {
+					"args": [ "d2" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"hidden": false,
+				"id": "e",
+				"sprite": "enter.png",
+				"type": "Image",
+				"x": 152,
+				"y": 240
+			}, {
+				"fontname": "d",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Hey.           ",
+				"type": "StaticText",
+				"x": 204,
+				"y": 157
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"d2": {
+			"code": [ {
+				"args": [],
+				"block": "user_left_clicked",
+				"subcode": [ {
+					"args": [ "d3" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"hidden": false,
+				"id": "e",
+				"sprite": "enter.png",
+				"type": "Image",
+				"x": 157,
+				"y": 237
+			}, {
+				"fontname": "Consola",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Calm Down. You are gonna wake up soon.                           ",
+				"type": "StaticText",
+				"x": 58,
+				"y": 176
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"d3": {
+			"code": [ {
+				"args": [],
+				"block": "user_left_clicked",
+				"subcode": [ {
+					"args": [ "buttongame1" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"hidden": false,
+				"id": "e",
+				"sprite": "enter.png",
+				"type": "Image",
+				"x": 169,
+				"y": 240
+			}, {
+				"fontname": "dConsolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "By Any Means, Do NOT Press the button.                          ",
+				"type": "StaticText",
+				"x": 61,
+				"y": 176
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"devcommentary": {
+			"code": [],
+			"elements": [ {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "developer commentary",
+				"type": "StaticText",
+				"x": 237,
+				"y": 111
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "chap 1",
+				"type": "StaticText",
+				"x": 181,
+				"y": 173
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "chap 2",
+				"type": "StaticText",
+				"x": 177,
+				"y": 200
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Text",
+				"type": "StaticText",
+				"x": 189,
+				"y": 223
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "chap4",
+				"type": "StaticText",
+				"x": 202,
+				"y": 244
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"developerconsole": {
+			"code": [ {
+				"args": [ "exit" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "Main" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [ "spawn" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [],
+					"block": "quit"
+				} ]
+			}, {
+				"args": [ "ko" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "skeal" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [ "kill" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "GameOver" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [ "quack" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "quack" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Developer Console",
+				"type": "StaticText",
+				"x": 186,
+				"y": 19
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 26,
+				"hidden": false,
+				"id": "",
+				"text": "Go use whatever commands here ig- dev",
+				"type": "StaticText",
+				"x": 129,
+				"y": 43
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "spawn",
+				"text": "spawn_ent_button",
+				"type": "Button",
+				"x": 189,
+				"y": 132
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "ko",
+				"text": "kill",
+				"type": "Button",
+				"x": 251,
+				"y": 157
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "quack",
+				"text": "quack",
+				"type": "Button",
+				"x": 251,
+				"y": 179
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "kill",
+				"text": "maxhealth 0",
+				"type": "Button",
+				"x": 217,
+				"y": 205
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "moer command soon!!!11",
+				"type": "Button",
+				"x": 151,
+				"y": 235
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "exit",
+				"text": "Exit",
+				"type": "Button",
+				"x": 254,
+				"y": 308
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"endelevator": {
+			"code": [ {
+				"args": [],
+				"block": "user_right_clicked",
+				"subcode": [ {
+					"args": [ "endelevator2" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [],
+			"properties": {
+				"BackgroundImage": "elevatordark.png",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"endelevator2": {
+			"code": [ {
+				"args": [],
+				"block": "user_right_clicked",
+				"subcode": [ {
+					"args": [ "theend" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [],
+			"properties": {
+				"BackgroundImage": "elevate.png",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"endgame1": {
+			"code": [ {
+				"args": [],
+				"block": "user_right_clicked",
+				"subcode": [ {
+					"args": [ "endgame2" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [],
+			"properties": {
+				"BackgroundImage": "ch3p1.png",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"endgame2": {
+			"code": [ {
+				"args": [],
+				"block": "user_right_clicked",
+				"subcode": [ {
+					"args": [ "endgamed1" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [],
+			"properties": {
+				"BackgroundImage": "roebotdialoguehelp.png",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"endgamed1": {
+			"code": [ {
+				"args": [],
+				"block": "user_left_clicked",
+				"subcode": [ {
+					"args": [ "endgamed2" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "dConsolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "???        ",
+				"type": "StaticText",
+				"x": 73,
+				"y": 165
+			}, {
+				"fontname": "dConsolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Oh God Im DED. Avarage day in ohio ig.                             ",
+				"type": "StaticText",
+				"x": 73,
+				"y": 190
+			}, {
+				"hidden": false,
+				"id": "",
+				"sprite": "enter.png",
+				"type": "Image",
+				"x": 193,
+				"y": 238
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"endgamed2": {
+			"code": [ {
+				"args": [],
+				"block": "user_left_clicked",
+				"subcode": [ {
+					"args": [ "endelevator" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "DConsolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "???        ",
+				"type": "StaticText",
+				"x": 110,
+				"y": 127
+			}, {
+				"fontname": "dConsolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Why are you not eating me?                    ",
+				"type": "StaticText",
+				"x": 108,
+				"y": 153
+			}, {
+				"fontname": "dConsolas",
+				"fontsize": 26,
+				"hidden": false,
+				"id": "",
+				"text": "Okay Fine. I'll activate the elevator if you don't.                                                          ",
+				"type": "StaticText",
+				"x": 69,
+				"y": 180
+			}, {
+				"hidden": false,
+				"id": "",
+				"sprite": "enter.png",
+				"type": "Image",
+				"x": 198,
+				"y": 237
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"quack": {
+			"code": [ {
+				"args": [ "120" ],
+				"block": "current_tick_equals",
+				"subcode": [ {
+					"args": [],
+					"block": "quit"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "Consolas",
+				"fontsize": 14,
+				"hidden": false,
+				"id": "",
+				"text": "Quack quack quack quack quack roebot mad quack quack quack quack roebot will be back quack",
+				"type": "StaticText",
+				"x": 106,
+				"y": 154
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"skeal": {
+			"code": [ {
+				"args": [ "80" ],
+				"block": "current_tick_equals",
+				"subcode": [ {
+					"args": [ "developerconsole" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "but who did you choose to keel??",
+				"type": "StaticText",
+				"x": 96,
+				"y": 144
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"theend": {
+			"code": [ {
+				"args": [ "100" ],
+				"block": "current_tick_equals",
+				"subcode": [ {
+					"args": [ "Main" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [],
+			"properties": {
+				"BackgroundImage": "theend.png",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		}
+	},
+	"office": {
+		"animations": {
+			"camera": "",
+			"mask": "",
+			"powerout": ""
+		},
+		"flashlight": false,
+		"mask": false,
+		"objects": [],
+		"panorama": true,
+		"power": {
+			"animatronic": "",
+			"enabled": false,
+			"starting_level": 99,
+			"ucn": false
+		},
+		"states": {
+			"Default": ""
+		},
+		"toxic": false,
+		"uibuttons": {
+			"camera": {
+				"image": "e.defaultcamera",
+				"position": [ 415, 315 ]
+			},
+			"mask": {
+				"image": "e.defaultmask",
+				"position": [ 175, 315 ]
+			}
+		}
+	},
+	"sounds": {
+		"ambience": "",
+		"animatronic_move": [],
+		"blip": "",
+		"camdown": "",
+		"camup": "",
+		"flashlight": "",
+		"maskbreathing": "",
+		"maskoff": "",
+		"maskon": "",
+		"masktoxic": "",
+		"music_box_run_out": "",
+		"phone_calls": [ "", "", "", "", "", "" ],
+		"powerout": "",
+		"signal_interrupted": "",
+		"stare": ""
+	}
+}

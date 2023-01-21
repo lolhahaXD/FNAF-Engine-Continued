@@ -1,0 +1,277 @@
+{
+	"animatronics": [],
+	"cameras": {
+		"CamUI": {
+			"buttons": [],
+			"music_box": [ 550, 60 ],
+			"sprites": []
+		}
+	},
+	"game_info": {
+		"id": "",
+		"title": "size extend"
+	},
+	"menus": {
+		"CustomNight": {
+			"code": [],
+			"elements": [],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"GameOver": {
+			"code": [ {
+				"args": [ "100" ],
+				"block": "current_tick_equals",
+				"subcode": [ {
+					"args": [ "Main" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [],
+				"block": "user_left_clicked",
+				"subcode": [ {
+					"args": [ "Main" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Game Over",
+				"type": "StaticText",
+				"x": 243,
+				"y": 157
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": true
+			}
+		},
+		"Main": {
+			"code": [ {
+				"args": [ "newgame" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "News" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [ "continue" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [],
+					"block": "continue_game"
+				} ]
+			}, {
+				"args": [],
+				"block": "on_game_loop",
+				"subcode": [ {
+					"args": [ "continue" ],
+					"block": "is_button_selected",
+					"subcode": [ {
+						"args": [ "night_txt" ],
+						"block": "show_element"
+					}, {
+						"args": [ "night_txt", "Night %data(Night)" ],
+						"block": "set_text"
+					} ]
+				}, {
+					"args": [ "continue" ],
+					"block": "is_button_selected",
+					"negated": true,
+					"subcode": [ {
+						"args": [ "night_txt" ],
+						"block": "hide_element"
+					} ]
+				} ]
+			}, {
+				"args": [],
+				"block": "on_menu_start",
+				"subcode": [ {
+					"args": [ "%data(beat5)", "==", "1" ],
+					"block": "compare_values",
+					"subcode": [ {
+						"args": [ "6thnight" ],
+						"block": "show_element"
+					} ]
+				}, {
+					"args": [ "%data(beat6)", "==", "1" ],
+					"block": "compare_values",
+					"subcode": [ {
+						"args": [ "cn" ],
+						"block": "show_element"
+					} ]
+				} ]
+			}, {
+				"args": [ "6thnight" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "6" ],
+					"block": "start_night"
+				} ]
+			}, {
+				"args": [ "cn" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "CustomNight" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Your\r\nGame\r\nTitle\r\nHere",
+				"type": "StaticText",
+				"x": 79,
+				"y": 27
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "newgame",
+				"text": "New Game",
+				"type": "Button",
+				"x": 80,
+				"y": 189
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "continue",
+				"text": "Continue",
+				"type": "Button",
+				"x": 80,
+				"y": 222
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": true,
+				"id": "6thnight",
+				"text": "6th Night",
+				"type": "Button",
+				"x": 80,
+				"y": 257
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": true,
+				"id": "cn",
+				"text": "Custom Night",
+				"type": "Button",
+				"x": 80,
+				"y": 289
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 18,
+				"hidden": true,
+				"id": "night_txt",
+				"text": "Night 1",
+				"type": "StaticText",
+				"x": 82,
+				"y": 244
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": true
+			}
+		},
+		"News": {
+			"code": [ {
+				"args": [ "80" ],
+				"block": "current_tick_equals",
+				"subcode": [ {
+					"args": [],
+					"block": "start_new_game"
+				} ]
+			}, {
+				"args": [],
+				"block": "user_left_clicked",
+				"subcode": [ {
+					"args": [],
+					"block": "start_new_game"
+				} ]
+			} ],
+			"elements": [],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"Warning": {
+			"code": [],
+			"elements": [ {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "siez eztend",
+				"type": "StaticText",
+				"x": 273,
+				"y": 169
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		}
+	},
+	"office": {
+		"animations": {
+			"camera": "",
+			"mask": "",
+			"powerout": ""
+		},
+		"flashlight": false,
+		"mask": false,
+		"objects": [],
+		"panorama": true,
+		"power": {
+			"animatronic": "",
+			"enabled": false,
+			"starting_level": 99,
+			"ucn": false
+		},
+		"states": {
+			"Default": ""
+		},
+		"toxic": false,
+		"uibuttons": {
+			"camera": {
+				"image": "e.defaultcamera",
+				"position": [ 415, 315 ]
+			},
+			"mask": {
+				"image": "e.defaultmask",
+				"position": [ 175, 315 ]
+			}
+		}
+	},
+	"sounds": {
+		"ambience": "",
+		"animatronic_move": [],
+		"blip": "",
+		"camdown": "",
+		"camup": "",
+		"flashlight": "",
+		"maskbreathing": "",
+		"maskoff": "",
+		"maskon": "",
+		"masktoxic": "",
+		"music_box_run_out": "",
+		"phone_calls": [ "", "", "", "", "", "" ],
+		"powerout": "",
+		"signal_interrupted": "",
+		"stare": ""
+	}
+}

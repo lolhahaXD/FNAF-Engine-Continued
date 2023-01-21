@@ -1,0 +1,692 @@
+{
+	"animatronics": [],
+	"cameras": {
+		"CamUI": {
+			"buttons": [],
+			"music_box": [ 550, 60 ],
+			"sprites": []
+		}
+	},
+	"ext_data": {
+		"better_ai": {
+			"version": 1
+		},
+		"skpanoramamodifier": {
+			"Camera": 200,
+			"Office": 300
+		}
+	},
+	"game_info": {
+		"fullscreen": true,
+		"id": "remdad",
+		"title": "DBS Remade"
+	},
+	"loaded_extensions": [ "More Scripting Blocks", "More Visual Scripting Blocks", "BetterAI", "Advanced Visual", "Panorama Modifier" ],
+	"menus": {
+		"CustomNight": {
+			"code": [],
+			"elements": [],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"GameOver": {
+			"code": [ {
+				"args": [ "100" ],
+				"block": "current_tick_equals",
+				"subcode": [ {
+					"args": [ "Main" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [],
+				"block": "user_left_clicked",
+				"subcode": [ {
+					"args": [ "Main" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Game Over",
+				"type": "StaticText",
+				"x": 243,
+				"y": 157
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": true
+			}
+		},
+		"Main": {
+			"code": [ {
+				"args": [ "leave" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [],
+					"block": "quit"
+				} ]
+			}, {
+				"args": [ "setting" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "Settings" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [ "select" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "j1p1" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "Yellowtail",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Dere's    ",
+				"type": "StaticText",
+				"x": 146,
+				"y": 64
+			}, {
+				"fontname": "Yellowtail",
+				"fontsize": 46,
+				"hidden": false,
+				"id": "",
+				"text": "Box ",
+				"type": "StaticText",
+				"x": 159,
+				"y": 91
+			}, {
+				"fontname": "Yellowtail",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Simulator  ",
+				"type": "StaticText",
+				"x": 125,
+				"y": 122
+			}, {
+				"fontname": "Yellowtail",
+				"fontsize": 76,
+				"hidden": false,
+				"id": "",
+				"text": "Remade      ",
+				"type": "StaticText",
+				"x": 203,
+				"y": 84
+			}, {
+				"fontname": "Yellowtail",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "setting",
+				"text": "Settings",
+				"type": "Button",
+				"x": 486,
+				"y": 180
+			}, {
+				"fontname": "Yellowtail",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "select",
+				"text": "Job Select     ",
+				"type": "Button",
+				"x": 486,
+				"y": 151
+			}, {
+				"fontname": "Yellowtail",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Extras      ",
+				"type": "Button",
+				"x": 486,
+				"y": 206
+			}, {
+				"fontname": "Yellowtail",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "leave",
+				"text": "Quit    ",
+				"type": "Button",
+				"x": 484,
+				"y": 231
+			}, {
+				"fontname": "mono",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Extras are full-game exclusive!                             ",
+				"type": "StaticText",
+				"x": 85,
+				"y": 308
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"News": {
+			"code": [ {
+				"args": [ "80" ],
+				"block": "current_tick_equals",
+				"subcode": [ {
+					"args": [],
+					"block": "start_new_game"
+				} ]
+			}, {
+				"args": [],
+				"block": "user_left_clicked",
+				"subcode": [ {
+					"args": [],
+					"block": "start_new_game"
+				} ]
+			} ],
+			"elements": [],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"Settings": {
+			"code": [ {
+				"args": [ "loss" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [],
+					"block": "fullscreen"
+				} ]
+			}, {
+				"args": [ "win" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [],
+					"block": "windowed"
+				} ]
+			}, {
+				"args": [ "main" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "Main" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "Consolas",
+				"fontsize": 26,
+				"hidden": false,
+				"id": "",
+				"text": "Why whould you change the graphics?",
+				"type": "StaticText",
+				"x": 97,
+				"y": 253
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 26,
+				"hidden": false,
+				"id": "",
+				"text": "The game is already shitty enough to run.",
+				"type": "StaticText",
+				"x": 64,
+				"y": 271
+			}, {
+				"fontname": "Yellowtail",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "View mode      ",
+				"type": "StaticText",
+				"x": 268,
+				"y": 134
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 26,
+				"hidden": false,
+				"id": "loss",
+				"text": "FullScreen",
+				"type": "Button",
+				"x": 211,
+				"y": 164
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 26,
+				"hidden": false,
+				"id": "win",
+				"text": "Windowed",
+				"type": "Button",
+				"x": 323,
+				"y": 165
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "main",
+				"text": "Back",
+				"type": "Button",
+				"x": 21,
+				"y": 27
+			}, {
+				"fontname": "Yellowtail",
+				"fontsize": 46,
+				"hidden": false,
+				"id": "",
+				"text": "Vsync    ",
+				"type": "StaticText",
+				"x": 64,
+				"y": 115
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "On",
+				"type": "Button",
+				"x": 61,
+				"y": 148
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Off",
+				"type": "Button",
+				"x": 97,
+				"y": 147
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"Warning": {
+			"code": [ {
+				"args": [ "180" ],
+				"block": "current_tick_equals",
+				"subcode": [ {
+					"args": [ "Main" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [],
+				"block": "user_left_clicked",
+				"subcode": [ {
+					"args": [ "Main" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [],
+			"properties": {
+				"BackgroundImage": "newload.png",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"gameoverj1": {
+			"code": [ {
+				"args": [ "r" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "j1p1" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [ "mm" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "Main" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "Yellowtail",
+				"fontsize": 66,
+				"hidden": false,
+				"id": "",
+				"text": "GameOver",
+				"type": "StaticText",
+				"x": 197,
+				"y": 134
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 26,
+				"hidden": false,
+				"id": "",
+				"text": "Clue: Duct Tape.",
+				"type": "StaticText",
+				"x": 197,
+				"y": 183
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "r",
+				"text": "Retry",
+				"type": "Button",
+				"x": 226,
+				"y": 236
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "mm",
+				"text": "Main Menu",
+				"type": "Button",
+				"x": 205,
+				"y": 265
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": true
+			}
+		},
+		"j1p1": {
+			"code": [ {
+				"args": [ "s2" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "j1p2" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [ "s4" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "j1p2" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [ "s5" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "j1p2" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [ "s8" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "j1p2" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "s3",
+				"text": "Select",
+				"type": "Button",
+				"x": 99,
+				"y": 73
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "s1",
+				"text": "Select",
+				"type": "Button",
+				"x": 18,
+				"y": 134
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "s2",
+				"text": "Select",
+				"type": "Button",
+				"x": 106,
+				"y": 199
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "s4",
+				"text": "Select",
+				"type": "Button",
+				"x": 197,
+				"y": 137
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "s6",
+				"text": "Select",
+				"type": "Button",
+				"x": 255,
+				"y": 72
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "s5",
+				"text": "Select",
+				"type": "Button",
+				"x": 263,
+				"y": 194
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "s9",
+				"text": "Select",
+				"type": "Button",
+				"x": 431,
+				"y": 196
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "s7",
+				"text": "Select",
+				"type": "Button",
+				"x": 434,
+				"y": 80
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "s8",
+				"text": "Select",
+				"type": "Button",
+				"x": 489,
+				"y": 134
+			} ],
+			"properties": {
+				"BackgroundImage": "autodraw 12_13_2022.png",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"j1p2": {
+			"code": [ {
+				"args": [ "g" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "gameoverj1" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [ "d" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "gameoverj1" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "d",
+				"text": "Select",
+				"type": "Button",
+				"x": 101,
+				"y": 80
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "d",
+				"text": "Select",
+				"type": "Button",
+				"x": 16,
+				"y": 139
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "g",
+				"text": "Select",
+				"type": "Button",
+				"x": 194,
+				"y": 136
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "g",
+				"text": "Select",
+				"type": "Button",
+				"x": 256,
+				"y": 196
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "g",
+				"text": "Select",
+				"type": "Button",
+				"x": 483,
+				"y": 144
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "d",
+				"text": "Select",
+				"type": "Button",
+				"x": 437,
+				"y": 74
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "d",
+				"text": "Select",
+				"type": "Button",
+				"x": 435,
+				"y": 193
+			} ],
+			"properties": {
+				"BackgroundImage": "autodraw 12_13_2022.png",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"j1p3": {
+			"code": [],
+			"elements": [ {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Button",
+				"type": "Button",
+				"x": 18,
+				"y": 142
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Button",
+				"type": "Button",
+				"x": 97,
+				"y": 81
+			} ],
+			"properties": {
+				"BackgroundImage": "autodraw 12_13_2022.png",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"jobselect": {
+			"code": [],
+			"elements": [ {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "j1demo",
+				"text": "Job 1/Demo",
+				"type": "Button",
+				"x": 202,
+				"y": 146
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		}
+	},
+	"office": {
+		"animations": {
+			"camera": "",
+			"mask": "",
+			"powerout": ""
+		},
+		"flashlight": false,
+		"mask": false,
+		"objects": [],
+		"panorama": true,
+		"power": {
+			"animatronic": "",
+			"enabled": false,
+			"starting_level": 99,
+			"ucn": false
+		},
+		"states": {
+			"Default": ""
+		},
+		"toxic": false,
+		"uibuttons": {
+			"camera": {
+				"image": "e.defaultcamera",
+				"position": [ 415, 315 ]
+			},
+			"mask": {
+				"image": "e.defaultmask",
+				"position": [ 175, 315 ]
+			}
+		}
+	},
+	"sounds": {
+		"ambience": "",
+		"animatronic_move": [],
+		"blip": "",
+		"camdown": "",
+		"camup": "",
+		"flashlight": "",
+		"maskbreathing": "",
+		"maskoff": "",
+		"maskon": "",
+		"masktoxic": "",
+		"music_box_run_out": "",
+		"phone_calls": [ "", "", "", "", "", "" ],
+		"powerout": "",
+		"signal_interrupted": "",
+		"stare": ""
+	}
+}

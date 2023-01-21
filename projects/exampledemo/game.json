@@ -1,0 +1,514 @@
+{
+	"animatronics": [],
+	"cameras": {
+		"CamUI": {
+			"buttons": [],
+			"music_box": [ 550, 60 ],
+			"sprites": []
+		}
+	},
+	"game_info": {
+		"id": "DUMBASS",
+		"title": "YOU GOT FUCKING TROLLED LOL"
+	},
+	"menus": {
+		"CUM": {
+			"code": [ {
+				"args": [ "q" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [],
+					"block": "quit"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Oh wow you finished the troll demo",
+				"type": "StaticText",
+				"x": 79,
+				"y": 57
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "There is also a Troll Night wich is",
+				"type": "StaticText",
+				"x": 73,
+				"y": 91
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "a fucking custom night with trolls",
+				"type": "StaticText",
+				"x": 83,
+				"y": 124
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "q",
+				"text": "Quit",
+				"type": "Button",
+				"x": 239,
+				"y": 306
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 23,
+				"hidden": false,
+				"id": "",
+				"text": "thats not coming out yet till the first fucking major update for the demo",
+				"type": "StaticText",
+				"x": 0,
+				"y": 164
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"CustomNight": {
+			"code": [],
+			"elements": [],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"FUCKYOU": {
+			"code": [ {
+				"args": [ "d" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "CUM" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"hidden": false,
+				"id": "",
+				"sprite": "images.png",
+				"type": "Image",
+				"x": 387,
+				"y": 79
+			}, {
+				"hidden": false,
+				"id": "",
+				"sprite": "images.png",
+				"type": "Image",
+				"x": 44,
+				"y": 177
+			}, {
+				"hidden": false,
+				"id": "",
+				"sprite": "images.png",
+				"type": "Image",
+				"x": 268,
+				"y": 155
+			}, {
+				"hidden": false,
+				"id": "",
+				"sprite": "images.png",
+				"type": "Image",
+				"x": 170,
+				"y": 64
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "AMOGNUS  DonLoed Free!!!!!!11111",
+				"type": "StaticText",
+				"x": 96,
+				"y": 24
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "d",
+				"text": "Download",
+				"type": "Button",
+				"x": 234,
+				"y": 294
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"GameOver": {
+			"code": [ {
+				"args": [ "100" ],
+				"block": "current_tick_equals",
+				"subcode": [ {
+					"args": [ "Main" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [],
+				"block": "user_left_clicked",
+				"subcode": [ {
+					"args": [ "Main" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Game Over",
+				"type": "StaticText",
+				"x": 243,
+				"y": 157
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": true
+			}
+		},
+		"Main": {
+			"code": [ {
+				"args": [ "newgame" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "News" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [ "continue" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [],
+					"block": "continue_game"
+				} ]
+			}, {
+				"args": [],
+				"block": "on_game_loop",
+				"subcode": [ {
+					"args": [ "continue" ],
+					"block": "is_button_selected",
+					"subcode": [ {
+						"args": [ "night_txt" ],
+						"block": "show_element"
+					}, {
+						"args": [ "night_txt", "Night %data(Night)" ],
+						"block": "set_text"
+					} ]
+				}, {
+					"args": [ "continue" ],
+					"block": "is_button_selected",
+					"negated": true,
+					"subcode": [ {
+						"args": [ "night_txt" ],
+						"block": "hide_element"
+					} ]
+				} ]
+			}, {
+				"args": [],
+				"block": "on_menu_start",
+				"subcode": [ {
+					"args": [ "%data(beat5)", "==", "1" ],
+					"block": "compare_values",
+					"subcode": [ {
+						"args": [ "6thnight" ],
+						"block": "show_element"
+					} ]
+				}, {
+					"args": [ "%data(beat6)", "==", "1" ],
+					"block": "compare_values",
+					"subcode": [ {
+						"args": [ "cn" ],
+						"block": "show_element"
+					} ]
+				} ]
+			}, {
+				"args": [ "6thnight" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "6" ],
+					"block": "start_night"
+				} ]
+			}, {
+				"args": [ "cn" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "CustomNight" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [ "demo" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "new" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [ "fuck" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "FUCKYOU" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [ "quit" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [],
+					"block": "quit"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "Yellowtail",
+				"fontsize": 40,
+				"hidden": false,
+				"id": "",
+				"text": "Dere's Box Simulator DEMO          ",
+				"type": "StaticText",
+				"x": 138,
+				"y": 65
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Demo 1.0.1",
+				"type": "StaticText",
+				"x": 474,
+				"y": 0
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "fuck",
+				"text": "Begin",
+				"type": "Button",
+				"x": 222,
+				"y": 208
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "demo",
+				"text": "Demo Patches/News",
+				"type": "Button",
+				"x": 159,
+				"y": 235
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "quit",
+				"text": "Quit",
+				"type": "Button",
+				"x": 226,
+				"y": 261
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": true
+			}
+		},
+		"News": {
+			"code": [ {
+				"args": [ "80" ],
+				"block": "current_tick_equals",
+				"subcode": [ {
+					"args": [],
+					"block": "start_new_game"
+				} ]
+			}, {
+				"args": [],
+				"block": "user_left_clicked",
+				"subcode": [ {
+					"args": [],
+					"block": "start_new_game"
+				} ]
+			} ],
+			"elements": [],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"Warning": {
+			"code": [ {
+				"args": [ "80" ],
+				"block": "current_tick_equals",
+				"subcode": [ {
+					"args": [ "Main" ],
+					"block": "goto_menu"
+				} ]
+			}, {
+				"args": [],
+				"block": "user_left_clicked",
+				"subcode": [ {
+					"args": [ "Main" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "Tahoma",
+				"fontsize": 20,
+				"hidden": false,
+				"id": "",
+				"text": "WARNING!",
+				"type": "StaticText",
+				"x": 270,
+				"y": 126
+			}, {
+				"fontname": "Tahoma",
+				"fontsize": 20,
+				"hidden": false,
+				"id": "",
+				"text": "This game contains flashing lights, loud  \r\n       noises, and lots of jumpscares!",
+				"type": "StaticText",
+				"x": 191,
+				"y": 156
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		},
+		"new": {
+			"code": [ {
+				"args": [ "x" ],
+				"block": "button_clicked",
+				"subcode": [ {
+					"args": [ "Main" ],
+					"block": "goto_menu"
+				} ]
+			} ],
+			"elements": [ {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Shit Troll Demo News and Patches",
+				"type": "StaticText",
+				"x": 99,
+				"y": 11
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "x",
+				"text": "X",
+				"type": "Button",
+				"x": 14,
+				"y": 307
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "Shit Release(1.0.0)",
+				"type": "StaticText",
+				"x": 167,
+				"y": 209
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 26,
+				"hidden": false,
+				"id": "",
+				"text": "Oh wow nice troll demo",
+				"type": "StaticText",
+				"x": 181,
+				"y": 228
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 26,
+				"hidden": false,
+				"id": "",
+				"text": "Thats getting fucking updated for some reason wow",
+				"type": "StaticText",
+				"x": 73,
+				"y": 246
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 36,
+				"hidden": false,
+				"id": "",
+				"text": "First Patch",
+				"type": "StaticText",
+				"x": 208,
+				"y": 154
+			}, {
+				"fontname": "Consolas",
+				"fontsize": 26,
+				"hidden": false,
+				"id": "",
+				"text": "Extended troll and you can quit on title now",
+				"type": "StaticText",
+				"x": 86,
+				"y": 175
+			} ],
+			"properties": {
+				"BackgroundImage": "",
+				"BackgroundMusic": "",
+				"StaticEffect": false
+			}
+		}
+	},
+	"office": {
+		"animations": {
+			"camera": "",
+			"mask": "",
+			"powerout": ""
+		},
+		"flashlight": false,
+		"mask": false,
+		"objects": [],
+		"panorama": true,
+		"power": {
+			"animatronic": "",
+			"enabled": false,
+			"starting_level": 99,
+			"ucn": false
+		},
+		"states": {
+			"Default": ""
+		},
+		"toxic": false,
+		"uibuttons": {
+			"camera": {
+				"image": "e.defaultcamera",
+				"position": [ 415, 315 ]
+			},
+			"mask": {
+				"image": "e.defaultmask",
+				"position": [ 175, 315 ]
+			}
+		}
+	},
+	"sounds": {
+		"ambience": "",
+		"animatronic_move": [],
+		"blip": "",
+		"camdown": "",
+		"camup": "",
+		"flashlight": "",
+		"maskbreathing": "",
+		"maskoff": "",
+		"maskon": "",
+		"masktoxic": "",
+		"music_box_run_out": "",
+		"phone_calls": [ "", "", "", "", "", "" ],
+		"powerout": "",
+		"signal_interrupted": "",
+		"stare": ""
+	}
+}
