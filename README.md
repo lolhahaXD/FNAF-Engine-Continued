@@ -3,12 +3,11 @@ I fucking continue FNAF Engine Haha
 So what now? Just go download the continuation. That i made duh.
 pls no copy pls!!!!!!!!!!1111
 im too dum for licenses and shit
-# Status Update(News)
-1.2.0 Is looking great so far. I have tested 2 reworks and they have been working GREAT.
-I will also take the chance to add more extensions. I added one too.
-The Extension is a FPS Booster.
-Everything is going great!!
-The Files Have ALSO been added..
+#Beta Out Now!
+The Testing Beta IS OUT now!
 # Testing Beta
-The testing beta is bassically just the engine but with some new features.
-The Testing Beta will come soon. But as another repository.
+The Testing Beta adds the features for the LATEST update. Not all of them well.. er..
+Bassically it allows you to see what there currently is.
+Here is the link:
+https://github.com/lolhahaXD/FnafECBeta
+And Remember To Read The README.md + The Read Me text on the beta files.
