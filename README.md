@@ -9,3 +9,6 @@ I will also take the chance to add more extensions. I added one too.
 The Extension is a FPS Booster.
 Everything is going great!!
 The Files Have ALSO been added..
+# Testing Beta
+The testing beta is bassically just the engine but with some new features.
+The Testing Beta will come soon. But as another repository.
