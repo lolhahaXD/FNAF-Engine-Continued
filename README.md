@@ -3,7 +3,8 @@ I fucking continue FNAF Engine Haha
 So what now? Just go download the continuation. That i made duh.
 pls no copy pls!!!!!!!!!!1111
 im too dum for licenses and shit
-# 1.2.0 News(Latest)
-1.2.0 is becoming real.
-1.2.0 is gonna contain the promised Extension Rework and New Extensions that i talked about in 1.1.10
-No, this wont get deleted any time soon.
+# Status Update(News)
+1.2.0 Is looking great so far. I have tested 2 reworks and they have been working GREAT.
+I will also take the chance to add more extensions. I added one too.
+The Extension is a FPS Booster.
+Everything is going great!!
