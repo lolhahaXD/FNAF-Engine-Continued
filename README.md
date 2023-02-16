@@ -8,7 +8,7 @@ Latest commit: P121oT(README.md)
 The megapatch update, 1.2.3, will fix premade menus,
 add 2 more extensions
 and fix the current bugs in the "issues" tab of the repository!
-This update will not be availible for the testing beta.
+This update will not be available for the testing beta.
 # Testing Beta
 The Testing Beta adds the features for the LATEST update. Not all of them well.. er..
 Bassically it allows you to see what there currently is.
