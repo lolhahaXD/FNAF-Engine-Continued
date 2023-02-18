@@ -4,7 +4,7 @@ So what now? Just go download the continuation. That i made duh.
 pls no copy pls!!!!!!!!!!1111
 im too dum for licenses and shit
 Latest commit: P121oT(README.md)
-# One more day left..
+# One day left..
 Till the megapatch releases!
 You may be wondering what the "UNKNOWN SURPRISE" is, but trust me, its kinda weird to see in a engine but it IS something.
 # Testing Beta
